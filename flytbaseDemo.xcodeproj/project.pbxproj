@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		774921CC24F18B3F0091F396 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 774921CB24F18B330091F396 /* GoogleService-Info.plist */; };
 		776DF85D24F129EE0065B5EF /* HistoryTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776DF85C24F129EE0065B5EF /* HistoryTVCell.swift */; };
 		7779FC5724EE78EE00728D87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779FC5624EE78EE00728D87 /* AppDelegate.swift */; };
 		7779FC5924EE78EE00728D87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779FC5824EE78EE00728D87 /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		294C25FBC0318FACE517F0AF /* Pods-flytbaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flytbaseDemo.debug.xcconfig"; path = "Target Support Files/Pods-flytbaseDemo/Pods-flytbaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6253299BF367F1FBECAC425E /* Pods-flytbaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flytbaseDemo.release.xcconfig"; path = "Target Support Files/Pods-flytbaseDemo/Pods-flytbaseDemo.release.xcconfig"; sourceTree = "<group>"; };
+		774921CB24F18B330091F396 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		776DF85C24F129EE0065B5EF /* HistoryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTVCell.swift; sourceTree = "<group>"; };
 		7779FC5324EE78EE00728D87 /* flytbaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flytbaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7779FC5624EE78EE00728D87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		774921CD24F196C80091F396 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				7779FC5624EE78EE00728D87 /* AppDelegate.swift */,
+				7779FC5824EE78EE00728D87 /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		774921CE24F196DF0091F396 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				774921D124F1970F0091F396 /* Login */,
+				774921D024F197020091F396 /* Calculator */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		774921CF24F196EA0091F396 /* Support files */ = {
+			isa = PBXGroup;
+			children = (
+				7779FC7024EE9CB800728D87 /* CalculatorOperation.swift */,
+				7779FC6E24EE8A2F00728D87 /* ExtensionClass.swift */,
+			);
+			path = "Support files";
+			sourceTree = "<group>";
+		};
+		774921D024F197020091F396 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				7779FC6C24EE887500728D87 /* CalculatorVC.swift */,
+				776DF85C24F129EE0065B5EF /* HistoryTVCell.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		774921D124F1970F0091F396 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7779FC6A24EE886400728D87 /* LoginVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		774921D224F1972B0091F396 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7779FC5C24EE78EE00728D87 /* Main.storyboard */,
+				7779FC6124EE78F900728D87 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7779FC4A24EE78EE00728D87 = {
 			isa = PBXGroup;
 			children = (
@@ -71,16 +126,12 @@
 		7779FC5524EE78EE00728D87 /* flytbaseDemo */ = {
 			isa = PBXGroup;
 			children = (
-				7779FC5624EE78EE00728D87 /* AppDelegate.swift */,
-				7779FC5824EE78EE00728D87 /* SceneDelegate.swift */,
-				7779FC6A24EE886400728D87 /* LoginVC.swift */,
-				7779FC6C24EE887500728D87 /* CalculatorVC.swift */,
-				776DF85C24F129EE0065B5EF /* HistoryTVCell.swift */,
-				7779FC7024EE9CB800728D87 /* CalculatorOperation.swift */,
-				7779FC6E24EE8A2F00728D87 /* ExtensionClass.swift */,
-				7779FC5C24EE78EE00728D87 /* Main.storyboard */,
+				774921CD24F196C80091F396 /* App Delegate */,
+				774921CE24F196DF0091F396 /* ViewController */,
+				774921CF24F196EA0091F396 /* Support files */,
+				774921D224F1972B0091F396 /* View */,
 				7779FC5F24EE78F900728D87 /* Assets.xcassets */,
-				7779FC6124EE78F900728D87 /* LaunchScreen.storyboard */,
+				774921CB24F18B330091F396 /* GoogleService-Info.plist */,
 				7779FC6424EE78F900728D87 /* Info.plist */,
 			);
 			path = flytbaseDemo;
@@ -92,7 +143,6 @@
 				294C25FBC0318FACE517F0AF /* Pods-flytbaseDemo.debug.xcconfig */,
 				6253299BF367F1FBECAC425E /* Pods-flytbaseDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -165,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7779FC6324EE78F900728D87 /* LaunchScreen.storyboard in Resources */,
+				774921CC24F18B3F0091F396 /* GoogleService-Info.plist in Resources */,
 				7779FC6024EE78F900728D87 /* Assets.xcassets in Resources */,
 				7779FC5E24EE78EE00728D87 /* Main.storyboard in Resources */,
 			);

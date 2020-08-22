@@ -9,7 +9,6 @@
 import UIKit
 
 @IBDesignable public class RoundedButton: UIButton {
-
     override public func layoutSubviews() {
         super.layoutSubviews()
 
@@ -79,7 +78,6 @@ extension String {
     }
     
     func match()-> String {
-        //"([-+]?[0-9]*'\'.?[0-9]+['\'/'\'+'\'-'\'*])+([-+]?[0-9]*'\'.?[0-9]+)"
         var strCal = self
         strCal = strCal.replacingOccurrences(of: "x", with: "*")
         strCal = strCal.replacingOccurrences(of: "÷", with: "/")

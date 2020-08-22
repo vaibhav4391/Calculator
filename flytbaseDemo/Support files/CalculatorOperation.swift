@@ -66,9 +66,9 @@ class CalculatorOperation {
         if let stringNumber = stringNumbers.last {
             if stringNumber.isEmpty {
                 if stringNumbers.count == 1 {
-                    //countOnMeDelegate?.alertShow(title: "Zéro!", message: "Démarrez un nouveau calcul!")
+
                 } else {
-                    //countOnMeDelegate?.alertShow(title: "Zéro!", message: "Entrez une expression correcte!")
+
                 }
                 return false
             }
@@ -79,7 +79,6 @@ class CalculatorOperation {
     var canAddOperator: Bool {
         if let stringNumber = stringNumbers.last {
             if stringNumber.isEmpty {
-                //countOnMeDelegate?.alertShow(title: "Zéro!", message: "Expression incorrecte!")
                 return false
             }
         }
@@ -101,44 +100,19 @@ class CalculatorOperation {
         if !isExpressionCorrect {
             return
         }
-        
-        //let numericExpression = strExpress
-        //let expression = NSExpression(format: numericExpression)
-        //let result = expression.expressionValue(with: nil, context: nil) as! NSNumber
-        //        var total = Double()
-        //        for (index, stringNumber) in stringNumbers.enumerated() {
-        //            let number = Double(stringNumber)
-        //            switch operators[index] {
-        //            case "+":
-        //                total += number!
-        //            case "-":
-        //                total -= number!
-        //            case "÷":
-        //                total /= number!
-        //            case "x":
-        //                total *= number!
-        //            default:
-        //                total = number!
-        //                break
-        //            }
-        //        }
-        //        countOnMeDelegate?.updateOutput(strOutput: "\(total)")
         countOnMeDelegate?.updateOutput(strOutput: "\(strExpress.calculate() ?? 0.0)")
         clear()
     }
     
     func clear() {
         stringNumbers = [String()]
-        //operators = [""]
+        operators = [""]
         index = 0
         strExpress = ""
     }
     
     func divide() {
         if canAddOperator {
-//            if isAddedOpenBracket == false {
-//                
-//            }
             operators.append("÷")
             strExpress.append("/")
             stringNumbers.append("")

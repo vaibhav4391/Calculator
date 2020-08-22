@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class CalculatorVC: UIViewController {
     
@@ -24,11 +25,24 @@ class CalculatorVC: UIViewController {
     private var calOperation = CalculatorOperation()
     
     var arrCalculator:[[String:String]]!
+    var databaseRef = DatabaseReference.init()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.databaseRef = Database.database().reference()
         arrCalculator = [[String:String]]()
         calOperation.countOnMeDelegate = self
+        
+        self.databaseRef.child(appDelegate.userNameAnPass).observe(.value) { (snapshot) in
+            if(snapshot.exists()) {
+                let enumerator = snapshot.children
+                while let listObject = enumerator.nextObject() as? DataSnapshot {
+                    let object = listObject.value as! [String: AnyObject]
+                    self.arrCalculator.append(object as! [String : String])
+                }
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -59,8 +73,7 @@ class CalculatorVC: UIViewController {
                 calOperation.divide()
             case "=":
                 self.lblOutput.text = lblCalcaulation.text!.match()
-                self.arrCalculator.append(["calculationOf":lblCalcaulation.text!, "result":"=\(lblOutput.text!)"])
-                self.tblHistory.reloadData()
+                self.saveFireData(dictData: ["calculationOf":lblCalcaulation.text!, "result":"=\(lblOutput.text!)"])
             case "±":
                 print("±")
             default:
@@ -89,6 +102,10 @@ class CalculatorVC: UIViewController {
 
 //Calculator History
 extension CalculatorVC: CountOnMeDelegate {
+    func saveFireData(dictData:[String:String]) {
+        self.databaseRef.child(appDelegate.userNameAnPass ?? "").childByAutoId().setValue(dictData)
+    }
+    
     func updateCal(strCalulation: String) {
         lblCalcaulation.text = strCalulation
     }
@@ -96,31 +113,26 @@ extension CalculatorVC: CountOnMeDelegate {
     func updateOutput(strOutput: String) {
         if let output:String = Optional.some(strOutput as String), output != "" {
             lblOutput.text = output
-            self.arrCalculator.append(["calculationOf":lblCalcaulation.text!, "result":"=\(lblOutput.text!)"])
         }
     }
 }
 
 extension CalculatorVC:UITableViewDelegate,UITableViewDataSource{
-    // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrCalculator?.count ?? 0
     }
     
-    // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:HistoryTVCell = tableView.dequeueReusableCell(withIdentifier: String(describing: HistoryTVCell.self)) as! HistoryTVCell
         cell.lblCalculationOf.text = (arrCalculator[indexPath.row])["calculationOf"]
         cell.lblResult.text = (arrCalculator[indexPath.row])["result"]
         return cell
     }
-    
-    // method to run when table view cell is tapped
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
-    
-    // Make the background color show through
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
