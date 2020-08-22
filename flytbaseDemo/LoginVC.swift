@@ -13,8 +13,6 @@ class LoginVC: UIViewController {
     @IBOutlet weak var tfldUserName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func btCalculateClickAction(_ sender: Any) {

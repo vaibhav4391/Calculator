@@ -17,9 +17,12 @@
 		7779FC6D24EE887500728D87 /* CalculatorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779FC6C24EE887500728D87 /* CalculatorVC.swift */; };
 		7779FC6F24EE8A3000728D87 /* ExtensionClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779FC6E24EE8A2F00728D87 /* ExtensionClass.swift */; };
 		7779FC7124EE9CB800728D87 /* CalculatorOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7779FC7024EE9CB800728D87 /* CalculatorOperation.swift */; };
+		DCAD61DFC776D078CBB032FF /* Pods_flytbaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6099FA85E63E8EBB536F3EB /* Pods_flytbaseDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		294C25FBC0318FACE517F0AF /* Pods-flytbaseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flytbaseDemo.debug.xcconfig"; path = "Target Support Files/Pods-flytbaseDemo/Pods-flytbaseDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6253299BF367F1FBECAC425E /* Pods-flytbaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-flytbaseDemo.release.xcconfig"; path = "Target Support Files/Pods-flytbaseDemo/Pods-flytbaseDemo.release.xcconfig"; sourceTree = "<group>"; };
 		776DF85C24F129EE0065B5EF /* HistoryTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTVCell.swift; sourceTree = "<group>"; };
 		7779FC5324EE78EE00728D87 /* flytbaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flytbaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7779FC5624EE78EE00728D87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		7779FC6C24EE887500728D87 /* CalculatorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorVC.swift; sourceTree = "<group>"; };
 		7779FC6E24EE8A2F00728D87 /* ExtensionClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionClass.swift; sourceTree = "<group>"; };
 		7779FC7024EE9CB800728D87 /* CalculatorOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorOperation.swift; sourceTree = "<group>"; };
+		C6099FA85E63E8EBB536F3EB /* Pods_flytbaseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_flytbaseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCAD61DFC776D078CBB032FF /* Pods_flytbaseDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,8 @@
 			children = (
 				7779FC5524EE78EE00728D87 /* flytbaseDemo */,
 				7779FC5424EE78EE00728D87 /* Products */,
+				7EEB3749961BED4F32437172 /* Pods */,
+				BA75F0D382A29941F07AD5CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,24 @@
 			path = flytbaseDemo;
 			sourceTree = "<group>";
 		};
+		7EEB3749961BED4F32437172 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				294C25FBC0318FACE517F0AF /* Pods-flytbaseDemo.debug.xcconfig */,
+				6253299BF367F1FBECAC425E /* Pods-flytbaseDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA75F0D382A29941F07AD5CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6099FA85E63E8EBB536F3EB /* Pods_flytbaseDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7779FC6724EE78F900728D87 /* Build configuration list for PBXNativeTarget "flytbaseDemo" */;
 			buildPhases = (
+				FB9348EB0E06346747811279 /* [CP] Check Pods Manifest.lock */,
 				7779FC4F24EE78EE00728D87 /* Sources */,
 				7779FC5024EE78EE00728D87 /* Frameworks */,
 				7779FC5124EE78EE00728D87 /* Resources */,
+				3C1FE3F775A4D183B37403A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C1FE3F775A4D183B37403A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-flytbaseDemo/Pods-flytbaseDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-flytbaseDemo/Pods-flytbaseDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-flytbaseDemo/Pods-flytbaseDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB9348EB0E06346747811279 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-flytbaseDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7779FC4F24EE78EE00728D87 /* Sources */ = {
@@ -298,6 +367,7 @@
 		};
 		7779FC6824EE78F900728D87 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 294C25FBC0318FACE517F0AF /* Pods-flytbaseDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,7 +376,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Self.flytbaseDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flytbaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -315,6 +385,7 @@
 		};
 		7779FC6924EE78F900728D87 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6253299BF367F1FBECAC425E /* Pods-flytbaseDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -323,7 +394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Self.flytbaseDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flytbaseDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
