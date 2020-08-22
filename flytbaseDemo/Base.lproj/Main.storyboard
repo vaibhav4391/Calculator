@@ -1,24 +1,649 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gKJ-m2-RJa">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
+        <scene sceneID="42v-oe-Vr7">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="RvJ-LY-dGA" customClass="LoginVC" customModule="flytbaseDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9uh-nC-dAt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter User Name to calculate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOM-nN-iVt">
+                                <rect key="frame" x="33" y="245" width="254" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="IgL-qy-L54"/>
+                                    <constraint firstAttribute="height" constant="38" id="vWT-3o-Ukn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="RvJ-LY-dGA" id="BOq-dA-BIs"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVQ-4f-U09">
+                                <rect key="frame" x="33" y="283.5" width="254" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="WZJ-uh-UhL"/>
+                                    <constraint firstAttribute="height" constant="1" id="zMS-q6-0S8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2W7-Yh-Rrf">
+                                <rect key="frame" x="33" y="292" width="254" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="l29-0X-wTJ"/>
+                                    <constraint firstAttribute="width" constant="254" id="pIh-Dj-h6U"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btCalculateClickAction:" destination="RvJ-LY-dGA" eventType="touchUpInside" id="jhv-Iu-vGf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2W7-Yh-Rrf" firstAttribute="top" secondItem="zVQ-4f-U09" secondAttribute="bottom" constant="7.5" id="5iT-eK-ZsE"/>
+                            <constraint firstItem="zVQ-4f-U09" firstAttribute="centerX" secondItem="9uh-nC-dAt" secondAttribute="centerX" id="WFV-Mq-5bz"/>
+                            <constraint firstItem="zVQ-4f-U09" firstAttribute="top" secondItem="FOM-nN-iVt" secondAttribute="bottom" constant="0.5" id="j1r-RQ-O5I"/>
+                            <constraint firstItem="2W7-Yh-Rrf" firstAttribute="centerX" secondItem="9uh-nC-dAt" secondAttribute="centerX" id="mal-Qe-l0O"/>
+                            <constraint firstItem="zVQ-4f-U09" firstAttribute="centerY" secondItem="9uh-nC-dAt" secondAttribute="centerY" id="sfp-Di-Umd"/>
+                            <constraint firstItem="FOM-nN-iVt" firstAttribute="centerX" secondItem="9uh-nC-dAt" secondAttribute="centerX" id="wI3-nX-Tm1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SL5-zd-4UY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gUj-uI-YAz"/>
+                    <connections>
+                        <outlet property="tfldUserName" destination="FOM-nN-iVt" id="kW1-cp-wzr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJv-SM-KSH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="249" y="138"/>
+        </scene>
+        <!--CalculatorVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculatorVC" id="BYZ-38-t0r" customClass="CalculatorVC" customModule="flytbaseDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zh-jb-xSz">
+                                <rect key="frame" x="241" y="12" width="71" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="14S-md-Xek"/>
+                                    <constraint firstAttribute="width" constant="71" id="NSI-zR-Txq"/>
+                                </constraints>
+                                <state key="normal" title="History">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnHistoryClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XjP-1g-3Jw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="WSh-07-Nnw">
+                                <rect key="frame" x="8" y="64" width="303" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="xS8-Ci-vPu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taM-pw-7SL">
+                                <rect key="frame" x="8" y="121" width="303" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="5fS-dp-G13"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ng8-As-ngn">
+                                <rect key="frame" x="10" y="177" width="301" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgp-Z6-xWT" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.89999997620000005" green="0.89999997620000005" blue="0.89999997620000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="LOl-va-Sgy"/>
+                                            <constraint firstAttribute="width" constant="70" id="e0S-8q-cP0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="AC">
+                                            <color key="titleColor" red="0.39519941809999998" green="0.39519941809999998" blue="0.39519941809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOperationClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ovh-dd-w4p"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yx5-sg-VD1" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="77" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.89999997620000005" green="0.89999997620000005" blue="0.89999997620000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="crS-j6-obW"/>
+                                            <constraint firstAttribute="height" constant="70" id="mzc-QG-GSp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="±">
+                                            <color key="titleColor" red="0.39519941809999998" green="0.39519941809999998" blue="0.39519941809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOperationClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MId-ZX-uXn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSs-cA-ds8" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="154" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" red="0.89999997620000005" green="0.89999997620000005" blue="0.89999997620000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="dTy-8P-YW6"/>
+                                            <constraint firstAttribute="width" constant="70" id="xfd-vl-np6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="%">
+                                            <color key="titleColor" red="0.39519941809999998" green="0.39519941809999998" blue="0.39519941809999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOperationClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ahy-78-Xw8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFT-jc-8AZ">
+                                        <rect key="frame" x="231" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="2UR-nb-KcP"/>
+                                            <constraint firstAttribute="height" constant="70" id="o0I-Q6-Cdb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="÷">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOperationClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TjP-99-DR7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="uvp-C7-MvQ">
+                                <rect key="frame" x="10" y="255" width="301" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNe-VK-Uhy" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Mh3-pr-XxD"/>
+                                            <constraint firstAttribute="width" constant="70" id="yRt-sX-4ET"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="7">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KhY-gc-ULr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4r-lx-BCo" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="77" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="Ev6-2t-Amj"/>
+                                            <constraint firstAttribute="width" constant="70" id="xWI-7K-PaF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="8">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HwX-CW-L3I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIB-Db-fd3" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="154" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="46d-TY-8bE"/>
+                                            <constraint firstAttribute="width" constant="70" id="pHc-Yf-kJF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="9">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K8S-KH-KQt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gg-R9-tst">
+                                        <rect key="frame" x="231" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="3xw-8J-ve6"/>
+                                            <constraint firstAttribute="height" constant="70" id="gcE-V9-eFb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="×">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOperationClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zmn-rE-gtR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="OrN-n6-Hjz">
+                                <rect key="frame" x="10" y="334" width="301" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEq-GW-muo" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="28O-Go-umP"/>
+                                            <constraint firstAttribute="width" constant="70" id="6S9-DQ-ZN8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="4">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8hg-Fq-AHJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuT-N9-7PZ" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="77" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="ZdJ-Yd-k6B"/>
+                                            <constraint firstAttribute="width" constant="70" id="yzU-vp-V9s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="5">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5md-gf-VEj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jE-6l-eRJ" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="154" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="X5Q-u9-FZu"/>
+                                            <constraint firstAttribute="width" constant="70" id="mNC-n6-eYB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="6">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TvR-Hv-kSx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyZ-2B-hsA">
+                                        <rect key="frame" x="231" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="COY-EN-6iv"/>
+                                            <constraint firstAttribute="width" constant="70" id="gLe-3V-fB2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOperationClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxe-ur-LmD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Xgu-2Z-NWg">
+                                <rect key="frame" x="10" y="412" width="301" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pv3-Fg-AvL" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="G4A-HV-p5K"/>
+                                            <constraint firstAttribute="height" constant="70" id="HZl-ut-DFJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gVZ-Op-yGc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nz-d7-ir0" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="77" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="bqU-9g-18e"/>
+                                            <constraint firstAttribute="width" constant="70" id="gWl-Kz-sNF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mtU-Hu-L5k"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yg-ra-fcB" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="154" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="PcG-uC-nYO"/>
+                                            <constraint firstAttribute="width" constant="70" id="ST9-CU-Jgk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vdE-hO-y4e"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWB-Ry-ZBL">
+                                        <rect key="frame" x="231" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="L4a-mh-LV9"/>
+                                            <constraint firstAttribute="width" constant="70" id="y6h-jY-ysc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOperationClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FYi-RY-ekQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="932-vc-p7p">
+                                <rect key="frame" x="10" y="490" width="301" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BlM-Fb-drz">
+                                        <rect key="frame" x="0.0" y="0.0" width="146" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="146" id="U09-pv-o9j"/>
+                                            <constraint firstAttribute="height" constant="70" id="U9I-H2-sWE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="0">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnDigitClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7hU-8D-CWI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRr-2h-YuE" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="154" y="0.0" width="69" height="70"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="69" id="Cc4-oo-fP7"/>
+                                            <constraint firstAttribute="height" constant="70" id="E35-nZ-V8Q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title=".">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.50196078430000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03v-zY-AzI" customClass="RoundedButton" customModule="flytbaseDemo" customModuleProvider="target">
+                                        <rect key="frame" x="231" y="0.0" width="70" height="70"/>
+                                        <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="DwG-dT-Y1t"/>
+                                            <constraint firstAttribute="height" constant="70" id="k1N-Sq-4u5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="=">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnOperationClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kFb-RG-59h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2Zh-jb-xSz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="4C6-dM-Obx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xgu-2Z-NWg" secondAttribute="trailing" constant="9" id="67k-GO-a0C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="932-vc-p7p" secondAttribute="trailing" constant="9" id="7RI-rC-bng"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="taM-pw-7SL" secondAttribute="trailing" constant="9" id="808-wf-1zc"/>
+                            <constraint firstItem="Ng8-As-ngn" firstAttribute="top" secondItem="taM-pw-7SL" secondAttribute="bottom" constant="8" id="AQG-HP-CDT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OrN-n6-Hjz" secondAttribute="trailing" constant="9" id="DCQ-Km-fDI"/>
+                            <constraint firstItem="taM-pw-7SL" firstAttribute="top" secondItem="WSh-07-Nnw" secondAttribute="bottom" constant="8" id="I9m-fU-jHS"/>
+                            <constraint firstItem="WSh-07-Nnw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="KNz-Jp-CAG"/>
+                            <constraint firstItem="uvp-C7-MvQ" firstAttribute="top" secondItem="Ng8-As-ngn" secondAttribute="bottom" constant="8" id="LH4-so-f9b"/>
+                            <constraint firstItem="Xgu-2Z-NWg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="QoF-I1-lbV"/>
+                            <constraint firstItem="uvp-C7-MvQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="R4f-7J-Wtx"/>
+                            <constraint firstItem="OrN-n6-Hjz" firstAttribute="top" secondItem="uvp-C7-MvQ" secondAttribute="bottom" constant="9" id="SsS-RI-r3n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Zh-jb-xSz" secondAttribute="trailing" constant="8" id="VAQ-8O-TVg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WSh-07-Nnw" secondAttribute="trailing" constant="9" id="WfN-zN-I9a"/>
+                            <constraint firstItem="Xgu-2Z-NWg" firstAttribute="top" secondItem="OrN-n6-Hjz" secondAttribute="bottom" constant="8" id="XQx-SN-2sJ"/>
+                            <constraint firstItem="932-vc-p7p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Ze1-Gp-2oi"/>
+                            <constraint firstItem="932-vc-p7p" firstAttribute="top" secondItem="Xgu-2Z-NWg" secondAttribute="bottom" constant="8" id="kD3-0M-L0h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uvp-C7-MvQ" secondAttribute="trailing" constant="9" id="pAq-yA-hMg"/>
+                            <constraint firstItem="Ng8-As-ngn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tOu-z9-wq4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="932-vc-p7p" secondAttribute="bottom" constant="8" id="trs-bo-aEv"/>
+                            <constraint firstItem="taM-pw-7SL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="xgb-6A-osA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ng8-As-ngn" secondAttribute="trailing" constant="9" id="yX2-3o-xZ5"/>
+                            <constraint firstItem="OrN-n6-Hjz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="yds-rA-DtP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnDevide" destination="CFT-jc-8AZ" id="RSN-ed-skv"/>
+                        <outlet property="btnMultiply" destination="9gg-R9-tst" id="rG1-7K-5uu"/>
+                        <outlet property="btnMunus" destination="tyZ-2B-hsA" id="siE-0q-FdK"/>
+                        <outlet property="btnPlus" destination="SWB-Ry-ZBL" id="kBh-u8-Q58"/>
+                        <outlet property="btnZero" destination="BlM-Fb-drz" id="pWD-sU-oM3"/>
+                        <outlet property="historyView" destination="htu-5g-8Zh" id="tqC-oH-fnP"/>
+                        <outlet property="lblCalcaulation" destination="taM-pw-7SL" id="0D1-8j-HNu"/>
+                        <outlet property="lblOutput" destination="WSh-07-Nnw" id="U1c-PO-yMx"/>
+                        <outlet property="tblHistory" destination="pFx-g6-Iv1" id="7Qa-3L-80U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="htu-5g-8Zh">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pFx-g6-Iv1">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="508"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.79845355308219179" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <prototypes>
+                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryTVCell" rowHeight="65" id="11m-5C-BCt" customClass="HistoryTVCell" customModule="flytbaseDemo" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="28" width="320" height="65"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="11m-5C-BCt" id="0vi-pR-gCi">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Siu-gb-vl7">
+                                                <rect key="frame" x="4" y="4" width="312" height="55"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAr-UO-ddV">
+                                                        <rect key="frame" x="8" y="5" width="288" height="22"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPk-SS-FfM">
+                                                        <rect key="frame" x="8" y="30" width="288" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="22" id="Qeu-7L-ubt"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="eAr-UO-ddV" firstAttribute="leading" secondItem="Siu-gb-vl7" secondAttribute="leading" constant="8" id="8pX-0k-9dw"/>
+                                                    <constraint firstItem="VPk-SS-FfM" firstAttribute="top" secondItem="eAr-UO-ddV" secondAttribute="bottom" constant="3" id="9xm-af-uhq"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VPk-SS-FfM" secondAttribute="bottom" constant="3" id="VyE-m9-dj1"/>
+                                                    <constraint firstItem="eAr-UO-ddV" firstAttribute="top" secondItem="Siu-gb-vl7" secondAttribute="top" constant="5" id="Zdb-OP-sra"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VPk-SS-FfM" secondAttribute="trailing" constant="16" id="hyf-lV-e8G"/>
+                                                    <constraint firstItem="VPk-SS-FfM" firstAttribute="leading" secondItem="Siu-gb-vl7" secondAttribute="leading" constant="8" id="qMd-AA-y0P"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eAr-UO-ddV" secondAttribute="trailing" constant="16" id="uFX-rD-yvQ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.74895654965753422" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Siu-gb-vl7" secondAttribute="bottom" constant="6" id="KRe-dF-m5I"/>
+                                            <constraint firstAttribute="trailing" secondItem="Siu-gb-vl7" secondAttribute="trailing" constant="4" id="cmn-9i-lOq"/>
+                                            <constraint firstItem="Siu-gb-vl7" firstAttribute="top" secondItem="0vi-pR-gCi" secondAttribute="top" constant="4" id="kmF-px-kip"/>
+                                            <constraint firstItem="Siu-gb-vl7" firstAttribute="leading" secondItem="0vi-pR-gCi" secondAttribute="leading" constant="4" id="yBf-I0-XEQ"/>
+                                        </constraints>
+                                    </tableViewCellContentView>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <outlet property="lblCalculationOf" destination="eAr-UO-ddV" id="9xc-xa-suM"/>
+                                        <outlet property="lblResult" destination="VPk-SS-FfM" id="ehV-GL-bjj"/>
+                                    </connections>
+                                </tableViewCell>
+                            </prototypes>
+                            <connections>
+                                <outlet property="dataSource" destination="BYZ-38-t0r" id="ZQ3-JX-sqf"/>
+                                <outlet property="delegate" destination="BYZ-38-t0r" id="Q42-vD-hAi"/>
+                            </connections>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiF-Tv-L5f">
+                            <rect key="frame" x="137.5" y="485" width="45" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="45" id="uI6-hb-9ux"/>
+                                <constraint firstAttribute="height" constant="45" id="v5s-56-lyF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="multiply" catalog="system"/>
+                            <connections>
+                                <action selector="btnCloseClickAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cxO-IB-wim"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="UiF-Tv-L5f" firstAttribute="centerX" secondItem="htu-5g-8Zh" secondAttribute="centerX" id="8Od-Kk-hBT"/>
+                        <constraint firstItem="pFx-g6-Iv1" firstAttribute="top" secondItem="KM3-Ob-BD1" secondAttribute="top" id="8qD-3b-Tvw"/>
+                        <constraint firstItem="UiF-Tv-L5f" firstAttribute="top" secondItem="pFx-g6-Iv1" secondAttribute="bottom" constant="-23" id="LFB-qt-m3v"/>
+                        <constraint firstItem="pFx-g6-Iv1" firstAttribute="trailing" secondItem="KM3-Ob-BD1" secondAttribute="trailing" id="eMv-Dr-0M8"/>
+                        <constraint firstItem="pFx-g6-Iv1" firstAttribute="leading" secondItem="KM3-Ob-BD1" secondAttribute="leading" id="shZ-F3-tTm"/>
+                        <constraint firstItem="KM3-Ob-BD1" firstAttribute="bottom" secondItem="pFx-g6-Iv1" secondAttribute="bottom" constant="60" id="wAl-Sa-aym"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="KM3-Ob-BD1"/>
+                </view>
             </objects>
+            <point key="canvasLocation" x="898" y="137"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x3I-8l-Khi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gKJ-m2-RJa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MnS-uv-7at">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="RvJ-LY-dGA" kind="relationship" relationship="rootViewController" id="WrB-pu-Qci"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftQ-XY-3MF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-487.5" y="140.49295774647888"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="multiply" catalog="system" width="64" height="54"/>
+    </resources>
 </document>
