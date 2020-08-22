@@ -36,6 +36,7 @@ class CalculatorVC: UIViewController {
         
         self.databaseRef.child(appDelegate.userNameAnPass).observe(.value) { (snapshot) in
             if(snapshot.exists()) {
+                self.arrCalculator.removeAll()
                 let enumerator = snapshot.children
                 while let listObject = enumerator.nextObject() as? DataSnapshot {
                     let object = listObject.value as! [String: AnyObject]
